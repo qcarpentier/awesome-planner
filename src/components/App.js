@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 
+import Header from './Header';
+import AddItem from './AddItem';
+import PlannerGrid from './PlannerGrid';
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -13,9 +17,13 @@ class App extends Component {
   }
   
   render() {
+    let username = this.state.username;
+    
     return (
-      <div className="App">
-        
+      <div className="app-container">
+        <Header username={username} />
+        <AddItem />
+        <PlannerGrid />
       </div>
     );
   }
