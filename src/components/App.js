@@ -9,20 +9,31 @@ class App extends Component {
     super(props);
   
     this.state = {
-      today: [],
-      tomorrow: [],
-      dayAfterTomorrow: [],
+      item: '',
+      todayItems: [],
+      tomorrowItems: [],
+      dayAfterTomorrowItems: [],
       username: 'Jon Snow'
     }
   }
-  
+
+  handleInputChanges = event => {
+    this.setState({
+      item: event.target.value
+    })
+
+    // Test input changes on Item
+    console.log(this.state.item);
+  }
+
   render() {
     let username = this.state.username;
     
     return (
       <div className="app-container">
         <Header username={username} />
-        <AddItem />
+        <AddItem 
+          handleInputChanges={this.handleInputChanges} />
         <PlannerGrid />
       </div>
     );
