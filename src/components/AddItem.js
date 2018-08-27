@@ -9,9 +9,12 @@ const AddItem = props => {
     props.handleInputChanges(event);
   }
 
+  // onSubmit handles submit when adding a new item (and clear it)
+  // onChange handles input changes and update the item
+  // Input value is set on item to clear the text box when it's submitted
   return (
     <form className="add-item-container" onSubmit={handleSubmit}>
-      <input type="text" onChange={handleInputChanges}/>
+      <input type="text" value={props.item} onChange={handleInputChanges}/>
       <button>&#10010;</button>
     </form>
   );

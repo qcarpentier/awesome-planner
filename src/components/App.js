@@ -34,18 +34,17 @@ class App extends Component {
         }
       })
     }
-
-    // Test submit feature
-    console.log(this.state.todayItems);
   }
 
   render() {
     let username = this.state.username;
+    let item = this.state.item;
     
     return (
       <div className="app-container">
         <Header username={username} />
         <AddItem 
+          item={item}
           handleInputChanges={this.handleInputChanges}
           handleSubmit={this.handleSubmit} />
         <PlannerGrid />
